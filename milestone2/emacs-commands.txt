@@ -1,0 +1,9 @@
+Word Count Command: wc filename - this command tells you the word count as well\
+ as the lines and characters a file has
+Compress Files: gzip filename - this command compresses files using the highest\
+ compression rate. Has .gz appended to the end of files.
+Uncompress Files: gunzip filename - Unzip files compressed by gzip
+Find any file: ff filename - Find files anywhere in the system i.e. if I forgot\
+ which directory I put a file. Using ff -p means I don't have to add the whole \
+name either.
+Email: elm - Use this as an email client. Learn more on the elm page.
