@@ -1,0 +1,5 @@
+For my Physics 91SI project, I would like to convert a stochastic modeling algorithm written in Apple's Swift language into Python. The stochastic simulation works by taking a list of user-specified reactions and their propensities for occuring (related to the number of metabolites and characteristic constants) and using a stochastic algorithm to determine the time between reactions and which reactions occur at any given timeStep. Possible extensions include adding a deterministic component to the model based off of Runge-Kutta approximation and using some sort of logic to determine which user reactions should be modeled by what. If time allows, I can also explore a flux-balance analysis model and try to implement a function for that.
+
+As far as input, the user would need to specify the constants for a given reaction and the reaction itself (not exactly sure the best way to do that). This could be put in an array or matrix format for the most part.
+
+To manipulate user data, I will use the Gillespie stochastic algorithm as described previously. The most useful functionality from scientific python will be the graphs, as they will be the output of the simulation.
