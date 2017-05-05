@@ -1,0 +1,6 @@
+from protein import Protein
+from protein import gRNA
+
+
+a = Protein()
+print(a.promoter)

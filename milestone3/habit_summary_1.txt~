@@ -1,0 +1,3 @@
+Habit 1: Don't reinvent the wheel
+
+I had trouble implementing the runge-kutta equation for approximating ODEs, but someone else implemented it for me. I just copy-pasta-ed their code from stack overflow and will test it/

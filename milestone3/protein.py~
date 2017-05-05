@@ -1,0 +1,12 @@
+class protein:
+'''Protein class encapsulates all interactions of a protein to abstract away a lot of the parameters and make the rest of the coding more intuitive'''
+
+    def __init__(self, amount=0, mRNA=0, kd=1, kdm=1, transc=1, transl=1):
+        '''Initializes protein mRNA amounts and protein amounts, as well as crucial biochemical parameters'''
+        self.amount = amount
+        self.mRNA = mRNA
+        self.kd = kd
+        self.kdm = kdm
+        self.transc = transc
+        self.transl = transl
+    def 
