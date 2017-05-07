@@ -1,3 +1,12 @@
 Habit 1: Don't reinvent the wheel
 
 I had trouble implementing the runge-kutta equation for approximating ODEs, but someone else implemented it for me. I just copy-pasta-ed their code from stack overflow and will test it later.
+
+
+_____
+
+For the second submission, I had trouble integrating almost everything. I had to make use of known libraries, such as the request library, while simultaneously duckduckgo-ing to figure out what they did. Therefore, I did not reinvent the wheel. I also asked a grad student for help during the beginning to help me get accustomed to certain libraries and useful browser functions for google-fu.
+
+I split up my code into chunks visually using various sub-functions as seen in the code that I wrote. 
+
+I am habitually reading the error out put to debug one of my functions. I had to use a print statement to debug when the urls were not being concatenated together correctly.
