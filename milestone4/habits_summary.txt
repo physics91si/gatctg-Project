@@ -1,0 +1,5 @@
+Write and test, write and test & Python is a physical system. Experiment!- 
+
+When trying to get the parsing working to search PubMed, I had to use help as well as trial and error to get the root.xpath method to work how I wanted it to. 
+
+When testing edge cases for generating keywords, I did trial and error at times to make the program work, specifically when searching people's names without 'synthetic biology' attached to them to generate results on PubMed.
