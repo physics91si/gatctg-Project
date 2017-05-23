@@ -1,0 +1,13 @@
+from ttp import ttp
+p = ttp.Parser()
+result = p.parse("@burnettedmond, you now support #IvoWertzel's tweet parser! https://github.com/edburnett/")
+print(result.reply)
+#'burnettedmond'
+print(result.users)
+#['burnettedmond']
+print(result.tags)
+#['IvoWertzel']
+print(result.urls)
+#['https://github.com/burnettedmond/']
+print(result.html)
+#u'<a href="http://twitter.com/burnettedmond">@burnettedmond</a>, you now support <a href="https://twitter.com/search?q=%23IvoWertzel">#IvoWertzel</a>\'s tweet parser! <a href="https://github.com/edburnett/">https://github.com/edburnett/</a>'
