@@ -2,7 +2,7 @@ from os import path
 from wordcloud import WordCloud
 from scraper import *
 
-array = runPubMed('drew', "endy", '+synthetic+biology')
+array = runPubMed('drew', "endy", "+synthetic+biology")
 
 text = ""
 for words in array:
@@ -22,5 +22,5 @@ plt.axis("off")
 #plt.figure()
 #plt.imshow(wordcloud, interpolation="bilinear")
 #plt.axis("off")
-#xsplt.show()
+plt.show()
 
