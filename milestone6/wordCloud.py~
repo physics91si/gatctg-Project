@@ -1,0 +1,5 @@
+import requests
+
+text = '<form action="http://www.wordle.net/advanced" method="POST">\n<textarea name="text" style="display:none">\nHow much wood would a woodchuck chuck if \na woodchuck could chuck wood?\n</textarea> \n<input type="submit"> \n </form>'
+
+r = requests.post('http://www.wordle.net/advanced', json = text)
