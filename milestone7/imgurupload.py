@@ -34,6 +34,7 @@ newWebHtml = web1html + "src=\"" +  data['link'] + web2html
 print (newWebHtml)
 with open('.//template/site.region', 'w') as new:
   new.write(newWebHtml)
+pexpect.run('cd template')
 pexpect.run('git add .')
 pexpect.run('git commit -m \"This is within pexpect\"')
 print(pexpect.run('git push'))
