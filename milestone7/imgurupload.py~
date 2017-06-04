@@ -35,6 +35,7 @@ print (newWebHtml)
 with open('.//template/site.region', 'w') as new:
   new.write(newWebHtml)
 pexpect.run('cd template')
+pexpect.run('git pull')
 pexpect.run('git remote set-url origin https://alec-lourenco-srmh.squarespace.com/template.git')
 pexpect.run('git add .')
 pexpect.run('git commit -m \"This is within pexpect\"')
