@@ -35,7 +35,7 @@ print (newWebHtml)
 with open('.//template/site.region', 'w') as new:
   new.write(newWebHtml)
 pexpect.run('cd template')
-pexpect.run('git remote add origin git@github.com:aleclourenco@gmail.com/https://alec-lourenco-srmh.squarespace.com/template.git')
+pexpect.run('git remote set-url origin git@github.com:aleclourenco@gmail.com/https://alec-lourenco-srmh.squarespace.com/template.git')
 pexpect.run('git add .')
 pexpect.run('git commit -m \"This is within pexpect\"')
 print(pexpect.run('git push --tags'))
