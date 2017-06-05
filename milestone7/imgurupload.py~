@@ -18,7 +18,7 @@ j1 = requests.post(
     headers = headers,
     data = {
         'key': api_key, 
-        'image': b64encode(open('meme49.jpg', 'rb').read()),
+        'image': b64encode(open('meme42.jpg', 'rb').read()),
         'type': 'base64',
         'name': 'meme42.jpg',
         'title': 'Picture no. 1'
@@ -35,8 +35,9 @@ print (newWebHtml)
 with open('.//template/site.region', 'w') as new:
   new.write(newWebHtml)
 pexpect.run('cd template')
-pexpect.run('git pull')
 pexpect.run('git remote set-url origin https://alec-lourenco-srmh.squarespace.com/template.git')
-pexpect.run('git add .')
-pexpect.run('git commit -m \"This is within pexpect\"')
-print(pexpect.run('git push'))
+pexpect.run('git add site.region')
+print(pexpect.run('git commit -m \"This is within pexpect\" site.region'))
+print(pexpect.run('git pull'))
+print(str(pexpect.run('git status')))
+print(pexpect.run('git push --force'))
