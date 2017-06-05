@@ -18,7 +18,7 @@ j1 = requests.post(
     headers = headers,
     data = {
         'key': api_key, 
-        'image': b64encode(open('meme42.jpg', 'rb').read()),
+        'image': b64encode(open('meme49.jpg', 'rb').read()),
         'type': 'base64',
         'name': 'meme42.jpg',
         'title': 'Picture no. 1'
