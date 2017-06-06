@@ -2,14 +2,15 @@ from os import path
 from wordcloud import WordCloud
 from scraper import *
 
-array = runPubMed('drew', "endy", "+synthetic+biology")
+array = runPubMed('megan', "palmer", "+synthetic+biology")
 
 text = ""
 for words in array:
+    text += " "
     text += words
 
 # Generate a word cloud image                                                                                                                                                                               
-wordcloud = WordCloud().generate(text)
+wordcloud = WordCloud(max_font_size=40).generate(text)
 
 # Display the generated image:                                                                                                                                                                              
 # the matplotlib way:                                                                                                                                                                                       

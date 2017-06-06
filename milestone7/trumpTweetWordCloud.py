@@ -1,0 +1,77 @@
+import twitter
+from wordcloud import WordCloud
+import base64
+import json
+import requests
+import pexpect
+
+from base64 import b64encode
+
+
+ckey = 'wbQbtvk5MjP8u2l6pHAFhQpNQ'
+csecret = 'aJolkSukKqhGXtDHQddxTnIcXViS7kG6quoM9AcE7um6NuRS7W'
+atoken = '871612827039150080CDsfSzWPf935d34QbrtWxgqF53LxQkn'
+asecret = '7lozjaias1jJSjJ5PYdSmDHTKIMGdXQn7kVI7sVPXpIJo'
+
+api = twitter.Api(consumer_key='wbQbtvk5MjP8u2l6pHAFhQpNQ',
+                      consumer_secret='aJolkSukKqhGXtDHQddxTnIcXViS7kG6quoM9AcE7um6NuRS7W',
+                      access_token_key='871612827039150080-CDsfSzWPf935d34QbrtWxgqF53LxQkn',
+                      access_token_secret='7lozjaias1jJSjJ5PYdSmDHTKIMGdXQn7kVI7sVPXpIJo')
+print(api.VerifyCredentials())
+
+statuses = api.GetUserTimeline(screen_name='@real_e_coli')
+print([s.text for s in statuses])
+
+text = ""
+for words in statuses:
+    if not "http" in words.text: 
+        text += " "
+        text += words.text
+
+# Generate a word cloud image                                                                                       \
+                                                                                                                     
+wordcloud = WordCloud(max_font_size=40).generate(text)
+
+# Display the generated image:                                                                                      \
+                                                                                                                     
+# the matplotlib way:                                                                                               \
+                                                                                                                     
+import matplotlib.pyplot as plt
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+#plt.figure().savefig('cloud.png')
+img = wordcloud.to_image()
+
+#with open("cloud.png", "w+") as png:
+#    png.write(img)
+
+img.save('cloud.png')
+
+headers = {"Authorization": "Client-ID 4932fef990cd708"}
+
+api_key = '7cf6f638060e1fd300e7f318fcfc4a5e3381206a'
+
+url = "http://api.imgur.com/3/upload.json"
+
+j1 = requests.post(
+    url,
+    headers = headers,
+    data = {
+        'key': api_key,
+        'image': b64encode(open('cloud.png', 'rb').read()),
+        'type': 'base64',
+        'name': 'cloud.png',
+        'title': 'TrumpTweets'
+    }
+)
+data = json.loads(j1.text)['data']
+print (data['link'])
+with open('.//template/site.region', 'r') as target_file:
+    webhtml = target_file.read()
+web1html = webhtml[:webhtml.find("src=")]
+web2html = webhtml[webhtml.find("\" ALT"):]
+newWebHtml = web1html + "src=\"" +  data['link'] + web2html
+print (newWebHtml)
+with open('.//template/site.region', 'w') as new:
+  new.write(newWebHtml)

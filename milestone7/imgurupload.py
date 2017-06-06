@@ -34,7 +34,7 @@ newWebHtml = web1html + "src=\"" +  data['link'] + web2html
 print (newWebHtml)
 with open('.//template/site.region', 'w') as new:
   new.write(newWebHtml)
-#pexpect.run('cd template')
+#pexpect.run('python3 ./template/commit.sh')
 #pexpect.run('git remote set-url origin https://alec-lourenco-srmh.squarespace.com/template.git')
 #print(pexpect.run("./template/commit.sh"))
 #print(pexpect.run('git commit -m \"This is within pexpect\"'))

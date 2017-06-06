@@ -4,7 +4,7 @@ from lxml import etree
 p = ttp.Parser()
 url = 'https://twitter.com/realDonaldTrump/status/866749195297976320'
 try:
-    r = requests.get(url, timeout=5) #Connect to internet to google search input name
+    r = requests.get(url, timeout=5) #Connect to internet
     root = etree.HTML(r.content)
     #for node in root.xpath('//div[@class="js-tweet-text-container"]//text()'):
         #print (node)
